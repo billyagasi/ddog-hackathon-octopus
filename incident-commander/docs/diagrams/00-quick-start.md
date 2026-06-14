@@ -52,7 +52,7 @@ POSTGRES_PASSWORD=postgres
 POSTGRES_DB=incident_commander
 
 # Slack
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/XXXXX/YYYYY/ZZZZZ
+SLACK_WEBHOOK_URL=
 
 # Datadog
 DD_API_KEY=<datadog-api-key>

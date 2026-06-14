@@ -202,8 +202,7 @@ POSTGRES_DB=incident_commander
 # ──────────────────────────────────────────
 # Slack
 # ──────────────────────────────────────────
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
-
+SLACK_WEBHOOK_URL=xxx
 # ──────────────────────────────────────────
 # Datadog
 # ──────────────────────────────────────────
