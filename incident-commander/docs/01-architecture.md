@@ -1,85 +1,108 @@
-# docs/01-architecture.md
+# Architecture
 
-# High Level Architecture
+## High Level Architecture
 
 ```text
 Datadog Platform
 
 ├── Watchdog
-├── Watchdog RCA
-├── Watchdog Impact Analysis
-├── Bits AI
 ├── Incident Management
 ├── Service Catalog
-├── SLO Management
-├── Cloud Cost Management
-├── Workflow Automation
-├── APM
 ├── Logs
 ├── Traces
+├── APM
+├── Error Tracking
 ├── Database Monitoring
-└── Events / Change Tracking
+├── SLO Management
+├── Cloud Cost Management
+├── Change Tracking
+├── Deployment Tracking
+├── Workflow Automation
+├── LLM Observability
+└── Service Scorecards
 
-                     │
-                     ▼
+                    │
 
-            FastAPI Alert Gateway
+                    ▼
 
-                     │
-                     ▼
+              Datadog MCP
 
-            LangGraph Orchestrator
+                    │
 
-                     │
+                    ▼
 
- ┌──────────┬────────────┬────────────┬────────────┬────────────┐
- ▼          ▼            ▼            ▼            ▼
+             FastAPI Gateway
 
-Incident   Infra &      App         Change      Business
-Lead AI    Platform AI  AI          AI          Impact AI
+                    │
 
-                     │
-                     ▼
+                    ▼
 
-              Decision Engine
+            LangGraph Runtime
 
-                     │
-                     ▼
+                    │
 
-          Risk & Confidence Engine
+                    ▼
 
-                     │
-                     ▼
+             Incident Lead AI
 
-            Human Approval Layer
+                    │
 
-                     │
-                     ▼
+     ┌──────────────┼──────────────┐
 
-      Datadog Workflow Automation
+     ▼              ▼              ▼
 
-                     │
-                     ▼
+Infrastructure   Application   Service
+Operations AI    Intelligence  Management AI
 
-             Slack Incident Room
+                    │
 
-                     │
-                     ▼
+                    ▼
 
-               PostgreSQL
+             Decision Engine
 
-                     │
-                     ▼
+                    │
 
-            Qdrant Knowledge Base
+                    ▼
 
----------------------------------------------------------
+        Risk & Confidence Engine
+
+                    │
+
+                    ▼
+
+          Human Approval Layer
+
+                    │
+
+                    ▼
+
+     Datadog Workflow Automation
+
+                    │
+
+                    ▼
+
+             Slack War Room
+
+                    │
+
+                    ▼
+
+        PostgreSQL Incident Store
+
+                    │
+
+                    ▼
+
+         Vector Knowledge Base
+
+--------------------------------------------------
 
 OpenTelemetry
 
-      │
+        │
 
-      ▼
+        ▼
 
 Datadog LLM Observability
 
@@ -90,52 +113,24 @@ Datadog Metrics
 Datadog Logs
 ```
 
-## Core Components
+## Architecture Principles
 
-### Datadog Intelligence Layer
+### Datadog First
 
-* Watchdog
-* Watchdog RCA
-* Watchdog Impact Analysis
-* Bits AI
-* Service Catalog
-* SLO Management
-* Cloud Cost Management
-* Incident Management
-* Workflow Automation
+Datadog remains the operational source of truth.
 
-### AI Orchestration Layer
+### MCP Native
 
-* FastAPI
-* LangGraph
-* OpenRouter
+All AI agents operate exclusively through Datadog MCP.
 
-### Collaboration Layer
+### Fully Observable
 
-* Slack
-* Datadog Incident Management
+Every AI action generates traces, metrics, and logs.
 
-### Data Layer
+### Human Governed
 
-* PostgreSQL
-* Qdrant
+No production action executes without approval.
 
-## Architecture Principle
+### Production Oriented
 
-AI Incident Commander does not replace Datadog intelligence.
-
-Datadog provides:
-
-* Detection
-* Correlation
-* Root Cause Signals
-* Cost Signals
-* Service Context
-
-AI Incident Commander provides:
-
-* Multi-agent Investigation
-* Decision Making
-* Risk Analysis
-* Human Approval
-* Knowledge Retention
+The platform is designed for real incident response workflows.

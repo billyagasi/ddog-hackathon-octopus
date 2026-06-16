@@ -1,12 +1,12 @@
-# docs/04-observability.md
-
 # Observability Design
 
 AI Incident Commander is fully observable through Datadog.
 
+---
+
 ## LLM Observability
 
-Tracked via Datadog LLM Observability.
+Tracked using Datadog LLM Observability.
 
 ### Metrics
 
@@ -20,13 +20,30 @@ aic.llm.cost.usd
 
 aic.llm.latency
 
-aic.llm.errors
+aic.llm.error
 
-Tags:
+### Tags
 
-* model
-* incident_type
-* agent
+- model
+- incident_type
+- agent
+
+---
+
+## MCP Metrics
+
+### Metrics
+
+aic.mcp.calls
+
+aic.mcp.duration
+
+aic.mcp.errors
+
+### Tags
+
+- tool
+- agent
 
 ---
 
@@ -40,10 +57,10 @@ aic.agent.execution.error
 
 aic.agent.confidence
 
-Tags:
+### Tags
 
-* agent
-* incident_type
+- agent
+- incident_type
 
 ---
 
@@ -53,7 +70,7 @@ aic.incident.created
 
 aic.incident.closed
 
-aic.incident.duration
+aic.incident.mttr
 
 aic.incident.approval
 
@@ -63,7 +80,7 @@ aic.incident.cost_saved
 
 ---
 
-## SLO Metrics
+## Reliability Metrics
 
 aic.slo.breach.detected
 
@@ -81,27 +98,25 @@ Every investigation becomes a distributed trace.
 Incident
 
 ├── Incident Lead AI
-├── Infrastructure AI
-├── Application AI
-├── Change Correlation AI
-├── Business Impact AI
-└── Confidence Engine
+├── Infrastructure Operations AI
+├── Application Intelligence AI
+├── Service Management AI
+├── Decision Engine
+└── Workflow Execution
 ```
-
-Visualized directly in Datadog APM.
 
 ---
 
 ## Structured Logs
 
-Example:
+All findings are logged as structured events.
 
 ```json
 {
   "incident_id":"INC-001",
-  "agent":"change-correlation",
-  "finding":"deployment correlation",
-  "confidence":92,
-  "source":"datadog-events"
+  "agent":"application-intelligence",
+  "finding":"database timeout",
+  "confidence":94,
+  "source":"apm-trace"
 }
 ```

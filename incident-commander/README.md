@@ -1,206 +1,192 @@
 # AI Incident Commander
 
-> Datadog-native AI Command Center for Incident Response, Business Impact Analysis, and Operational Intelligence.
+## Datadog-Native Autonomous Incident Response Platform
+
+AI Incident Commander transforms observability signals into operational decisions.
+
+The platform uses Datadog MCP as the exclusive intelligence layer and coordinates AI agents that investigate incidents, assess business impact, generate recommendations, coordinate remediation, and automatically produce detailed RCA reports.
+
+Unlike traditional observability platforms that stop at detection, AI Incident Commander extends the incident lifecycle into investigation, decision making, approval, remediation, and organizational learning.
 
 ---
 
-## Overview
+# Problem
 
-AI Incident Commander is a multi-agent operational intelligence platform built on top of Datadog and Large Language Models.
+Modern engineering teams already have access to:
 
-Rather than replacing Datadog capabilities, the platform acts as an orchestration and decision layer that transforms Datadog insights into coordinated investigations, business impact analysis, operational decisions, and organizational knowledge.
-
-The platform is designed around a Slack-native Incident War Room where AI agents and engineers collaborate in real time.
-
----
-
-## Vision
-
-Transform incident response from:
-
-```text
-Alert
-→ Investigation
-→ Recovery
-```
-
-Into:
-
-```text
-Alert
-
-→ Datadog Intelligence
-
-→ AI War Room
-
-→ Multi-Agent Investigation
-
-→ Business Impact Analysis
-
-→ Recovery Recommendation
-
-→ Human Approval
-
-→ RCA Generation
-
-→ Knowledge Retention
-```
-
----
-
-## Datadog-First Philosophy
-
-AI Incident Commander maximizes existing Datadog capabilities rather than rebuilding them.
-
-The platform leverages:
-
-* Watchdog
-* Bits AI
-* APM
+* Metrics
 * Logs
 * Traces
-* Events
-* Service Catalog
+* APM
+* SLOs
+* Cloud Cost Analytics
 * Incident Management
-* Workflow Automation
-* LLM Observability
 
-Datadog provides intelligence.
+The challenge is not collecting telemetry.
 
-AI Incident Commander provides orchestration and decision making.
+The challenge is transforming telemetry into actionable decisions.
+
+During production incidents, engineers must answer:
+
+* What broke?
+* What changed?
+* Which services are impacted?
+* What is the business impact?
+* What should we do next?
+* Is the recommendation safe?
+
+This process is often manual and time consuming.
 
 ---
 
-## AI Agents
+# Solution
+
+AI Incident Commander acts as an autonomous incident response layer on top of Datadog.
+
+```text
+Watchdog
+
+↓
+
+Datadog MCP
+
+↓
+
+AI Investigation
+
+↓
+
+Decision
+
+↓
+
+Approval
+
+↓
+
+Automation
+
+↓
+
+Recovery
+
+↓
+
+Auto RCA
+
+↓
+
+Knowledge Base
+```
+
+---
+
+# Key Features
+
+## MCP Native Investigation
+
+All AI agents use Datadog MCP.
+
+No direct infrastructure access.
+
+No direct Kubernetes access.
+
+No direct database access.
+
+Datadog remains the source of truth.
+
+---
+
+## Multi-Agent Investigation
 
 ### Incident Lead AI
 
-Responsible for:
+Incident ownership and orchestration.
 
-* Severity classification
-* SLA ownership
-* Investigation orchestration
-* Recommendation generation
-* Approval workflow
+### Infrastructure Operations AI
 
----
+Infrastructure, SRE, DevOps, Deployment and Cost Analysis.
 
-### Infrastructure & Platform Engineering AI
+### Application Intelligence AI
 
-Responsible for:
+Logs, Traces, APM, Error Tracking and LLM Analysis.
 
-* Infrastructure
-* Kubernetes
-* Databases
-* Redis
-* Kafka
-* Elasticsearch/OpenSearch
-* Cloud Services
-* ArgoCD
-* Deployments
+### Service Management AI
+
+SLO, SLA, Business Impact, Runbooks, RCA and Executive Reporting.
 
 ---
 
-### Application Support AI
+## Human-Governed Automation
 
-Responsible for:
+Recommendations never execute automatically.
 
-* Logs analysis
-* Trace analysis
-* APM analysis
-* Service dependency mapping
-* Application RCA
+Human approval is required for:
 
----
-
-### Incident Management AI
-
-Responsible for:
-
-* RCA generation
-* Business impact analysis
-* Revenue exposure estimation
-* Audit trail
-* Executive reporting
-* Knowledge retention
+* Rollbacks
+* Scaling
+* Database Failover
+* Runbook Execution
 
 ---
 
-## Key Features
+## Auto RCA Engine
 
-### Slack-Native War Room
+Every incident automatically generates:
 
-Every incident automatically creates a dedicated Slack thread.
-
----
-
-### Multi-Agent Investigation
-
-Specialized AI agents investigate incidents in parallel.
-
----
-
-### Business Impact Analysis
-
-Translate technical incidents into:
-
-* User impact
-* Transaction impact
-* Revenue exposure
-* SLA risk
+* Timeline
+* Findings
+* Root Cause
+* Business Impact
+* Lessons Learned
+* Preventive Actions
 
 ---
 
-### Knowledge Retention
+## Full AI Observability
 
-Every incident improves future investigations.
+Every AI action is observable through:
 
----
-
-### Executive Dashboard
-
-Translate technical incidents into business intelligence.
-
----
-
-## Primary Use Cases
-
-### Production Outage
-
-Examples:
-
-* Latency spike
-* Error rate increase
-* Deployment regression
-* Database saturation
+* Datadog LLM Observability
+* Datadog APM
+* Datadog Metrics
+* Datadog Logs
 
 ---
 
-### AWS Billing Anomaly
+# Datadog Capabilities Used
 
-Examples:
-
-* Cost spike
-* Unexpected scaling
-* Retry storms
-* Resource overconsumption
+* Watchdog
+* Incident Management
+* Service Catalog
+* Logs
+* Traces
+* APM
+* Error Tracking
+* Database Monitoring
+* Kubernetes Monitoring
+* Deployment Tracking
+* Change Tracking
+* SLO Management
+* Service Scorecards
+* Cloud Cost Management
+* Workflow Automation
+* LLM Observability
 
 ---
 
-## Documentation
+# Business Value
 
-| Document                           | Description                    |
-| ---------------------------------- | ------------------------------ |
-| docs/00-overview.md                | Product vision                 |
-| docs/01-architecture.md            | High level architecture        |
-| docs/02-agent-design.md            | Agent responsibilities         |
-| docs/03-workflow.md                | Incident workflow              |
-| docs/04-observability.md           | Datadog observability strategy |
-| docs/05-data-model.md              | Database design                |
-| docs/06-slack-war-room.md          | Slack collaboration            |
-| docs/07-executive-dashboard.md     | Management dashboard           |
-| docs/08-outage-usecase.md          | Outage scenario                |
-| docs/09-billing-anomaly-usecase.md | Billing anomaly scenario       |
-| docs/10-mvp-roadmap.md             | Implementation roadmap         |
-| docs/11-datadog-capabilities.md    | Datadog feature utilization    |
-| docs/12-technical-stack.md         | Technical architecture         |
+* Reduced MTTR
+* Faster Incident Investigation
+* Better Reliability
+* Improved Operational Visibility
+* Better Executive Awareness
+* Lower Cloud Costs
+* Organizational Learning
+
+---
+
+# Why This Project
+
+AI Incident Commander demonstrates how Datadog MCP, LLM Observability, Workflow Automation and Bedrock-powered AI can work together to transform observability into operational decision making.

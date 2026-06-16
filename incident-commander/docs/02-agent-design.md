@@ -1,155 +1,143 @@
-# docs/02-agent-design.md
-
 # Agent Design
 
 ## Incident Lead AI
 
-Responsibilities:
+### Role
 
-* Incident ownership
-* Agent orchestration
-* Severity assignment
-* Recommendation generation
-* Approval workflow
+Acts as the Incident Commander.
 
-Inputs:
+### Responsibilities
 
-* Watchdog Findings
-* Datadog Incident Context
-* Service Catalog
+- Incident ownership
+- Agent orchestration
+- Severity assignment
+- Investigation coordination
+- Executive communication
+- Recommendation generation
+- Approval management
 
-Outputs:
+### Datadog Sources
 
-* Incident Summary
-* Final Recommendation
-* Confidence Score
+- Incident Management
+- Watchdog
+- Service Catalog
+- Workflow Automation
 
----
+### Outputs
 
-## Infrastructure & Platform AI
-
-Responsibilities:
-
-* Kubernetes
-* Infrastructure
-* Database Monitoring
-* Cloud Resources
-* Cost Analysis
-
-Datadog Sources:
-
-* Infrastructure Monitoring
-* Database Monitoring
-* Cloud Cost Management
-* Watchdog
-
-Outputs:
-
-* Infrastructure Findings
-* Cost Findings
-* Platform Findings
+- Incident Summary
+- Current Status
+- Recommendation
+- Confidence Score
+- Risk Score
 
 ---
 
-## Application Support AI
+## Infrastructure Operations AI
 
-Responsibilities:
+### Role
 
-* Log Analysis
-* Trace Analysis
-* Dependency Analysis
-* Service Analysis
+Combines SRE, DevOps, Infrastructure, Platform Engineering, and Deployment Analysis.
 
-Datadog Sources:
+### Responsibilities
 
-* APM
-* Logs
-* Traces
-* Service Catalog
+- Infrastructure investigation
+- Kubernetes analysis
+- Database analysis
+- Capacity analysis
+- Resource saturation detection
+- Deployment correlation
+- Change analysis
+- Cost anomaly analysis
+- Reliability analysis
 
-Outputs:
+### Datadog Sources
 
-* Root Cause Hypothesis
-* Application Findings
+- Infrastructure Monitoring
+- Kubernetes Monitoring
+- Database Monitoring
+- Deployment Tracking
+- Change Tracking
+- Cloud Cost Management
+- Watchdog
 
----
+### Outputs
 
-## Change Correlation AI
-
-Responsibilities:
-
-* Deployment Analysis
-* Change Tracking Analysis
-* Feature Flag Analysis
-* Configuration Drift Analysis
-
-Datadog Sources:
-
-* Events
-* Deployment Tracking
-* Change Tracking
-
-Outputs:
-
-* Change Probability Score
-
-Example:
-
-Deployment:
-92%
-
-Infrastructure:
-5%
-
-Database:
-3%
+- Infrastructure Findings
+- Capacity Findings
+- Deployment Correlation
+- Change Correlation
+- Cost Findings
 
 ---
 
-## Business Impact AI
+## Application Intelligence AI
 
-Responsibilities:
+### Role
 
-* User Impact Analysis
-* Revenue Impact Analysis
-* SLO Analysis
-* Error Budget Analysis
+Investigates application-level failures.
 
-Datadog Sources:
+### Responsibilities
 
-* Watchdog Impact Analysis
-* SLO Management
-* Service Catalog
+- Log analysis
+- Trace analysis
+- APM investigation
+- Error tracking
+- Dependency mapping
+- Service analysis
+- LLM investigation
 
-Outputs:
+### Datadog Sources
 
-* Revenue Exposure
-* User Impact
-* Error Budget Risk
-* Executive Summary
+- Logs
+- Traces
+- APM
+- Error Tracking
+- Service Catalog
+- Watchdog RCA
+- LLM Observability
+
+### Outputs
+
+- Root Cause Hypothesis
+- Error Findings
+- Latency Findings
+- Dependency Findings
+- Application Findings
 
 ---
 
-## Confidence Engine
+## Service Management AI
 
-Responsibilities:
+### Role
 
-* Aggregate confidence from all agents
-* Weight Watchdog confidence
-* Weight Bits AI findings
-* Generate final recommendation confidence
+Business and governance intelligence layer.
 
-Example:
+### Responsibilities
 
-Watchdog:
-88
+- Business impact analysis
+- SLA analysis
+- SLO analysis
+- Error budget analysis
+- Runbook intelligence
+- Executive reporting
+- RCA generation
+- Knowledge management
+- Incident trend analysis
 
-Bits AI:
-91
+### Datadog Sources
 
-Agents:
-93
+- SLO Management
+- Incident Management
+- Service Catalog
+- Watchdog Impact Analysis
+- Service Scorecards
 
-Final:
-91
+### Outputs
 
+- Revenue Exposure
+- User Impact
+- SLA Impact
+- Executive Summary
+- RCA Report
+- Runbook Recommendation

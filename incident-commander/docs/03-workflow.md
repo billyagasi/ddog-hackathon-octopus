@@ -1,21 +1,11 @@
-# docs/03-workflow.md
-
 # Incident Workflow
 
 ```text
-Watchdog Anomaly
-
-OR
-
-Datadog Incident
+Watchdog Alert
 
 ↓
 
-Create Slack War Room
-
-↓
-
-Load Service Catalog Context
+Incident Created
 
 ↓
 
@@ -23,24 +13,35 @@ Incident Lead AI
 
 ↓
 
-Parallel Investigation
-
-├── Infrastructure AI
-├── Application AI
-├── Change Correlation AI
-└── Business Impact AI
+Load Service Context
 
 ↓
 
-Ask Bits AI
+Launch Investigation
+
+├── Infrastructure Operations AI
+├── Application Intelligence AI
+└── Service Management AI
 
 ↓
 
-Aggregate Findings
+Parallel MCP Queries
 
 ↓
 
-Confidence Engine
+Hypothesis Generation
+
+↓
+
+Additional MCP Queries
+
+↓
+
+Evidence Collection
+
+↓
+
+Confidence Calculation
 
 ↓
 
@@ -52,11 +53,11 @@ Recommendation
 
 ↓
 
-Approval Workflow
+Human Approval
 
 ↓
 
-Datadog Workflow Automation
+Workflow Automation
 
 ↓
 
@@ -64,7 +65,7 @@ Resolution
 
 ↓
 
-RCA
+Auto RCA
 
 ↓
 
@@ -75,50 +76,54 @@ Knowledge Base Update
 
 ### Detection
 
-* Watchdog
-* Monitors
-* Incidents
+- Watchdog
+- Monitors
+- Incident Management
 
 ### Correlation
 
-* Events
-* Deployment Tracking
-* Change Tracking
+- Change Tracking
+- Deployment Tracking
+- Events
 
 ### Context
 
-* Service Catalog
-* SLO
-* Error Budget
+- Service Catalog
+- Service Scorecards
+
+### Reliability
+
+- SLO
+- Error Budget
 
 ### Analysis
 
-* Bits AI
-* Watchdog RCA
-* Watchdog Impact Analysis
+- Logs
+- Traces
+- APM
+- Error Tracking
 
-## Workflow Types
+### Business
+
+- Impact Analysis
+- Cloud Cost
+
+---
+
+## Supported Incident Types
 
 ### Production Outage
 
-* Availability degradation
-* Error spike
-* Latency spike
+### Latency Spike
 
-### Cost Anomaly
-
-* AWS billing anomaly
-* Resource explosion
-* Scaling anomaly
+### Error Spike
 
 ### Database Incident
 
-* Connection saturation
-* Slow queries
-* Replication lag
+### Deployment Failure
 
 ### SLO Breach
 
-* Error budget burn
-* Availability degradation
-* Performance degradation
+### Cost Anomaly
+
+### LLM Failure
