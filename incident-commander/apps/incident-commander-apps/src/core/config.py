@@ -9,10 +9,18 @@ class Settings(BaseSettings):
     dd_service: str = "ai-incident-commander"
     dd_version: str = "1.0.0"
 
+    # LLM Provider (openrouter or bedrock)
+    llm_provider: str = "openrouter"
+
+    # OpenRouter settings
+    openrouter_api_key: str = ""
+    openrouter_model: str = "anthropic/claude-3.5-sonnet"
+
     # AWS / Bedrock settings
     aws_access_key_id: str = ""
     aws_secret_access_key: str = ""
     aws_default_region: str = "us-east-1"
+    bedrock_model_id: str = "anthropic.claude-3-5-sonnet-20240620-v1:0"
 
     # Slack settings
     slack_bot_token: str = ""

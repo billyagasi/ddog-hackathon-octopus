@@ -18,5 +18,6 @@ dependencies = [
     "opentelemetry-instrumentation-fastapi",
     "ddtrace",
     "python-dotenv",
-    "pydantic-settings"
+    "pydantic-settings",
+    "langchain-openai"
 ]
