@@ -68,6 +68,7 @@ Combines SRE, DevOps, Infrastructure, Platform Engineering, and Deployment Analy
 - Deployment Correlation
 - Change Correlation
 - Cost Findings
+- Confidence Score
 
 ---
 
@@ -104,6 +105,7 @@ Investigates application-level failures.
 - Latency Findings
 - Dependency Findings
 - Application Findings
+- Confidence Score
 
 ---
 
@@ -141,3 +143,40 @@ Business and governance intelligence layer.
 - Executive Summary
 - RCA Report
 - Runbook Recommendation
+- Confidence Score
+
+---
+
+## Security Intelligence AI
+
+### Role
+
+Acts as the Security Operations Center (SOC) intelligence layer.
+
+### Responsibilities
+
+- Threat detection and analysis
+- Vulnerability assessment
+- Security incident response
+- Compliance and governance monitoring
+- Access anomaly detection
+- Data exfiltration analysis
+- Security log correlation
+
+### Datadog Sources
+
+- Cloud Security Management
+- Application Security Management
+- Security Monitoring (SIEM)
+- Audit Trail
+- Watchdog Security Anomalies
+- Log Management (Application/Infrastructure/Platform Logs)
+
+### Outputs
+
+- Threat Analysis
+- Compromise Indicators (IoC)
+- Security Posture Findings
+- Mitigation Recommendations
+- Access Violation Reports
+- Confidence Score
